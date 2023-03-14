@@ -1,0 +1,20 @@
+# This is a basic workflow to help you get started with Actions
+
+name: AOP Repos one action
+on:
+  workflow_dispatch:
+
+jobs:
+  reusable_workflow_job:
+    uses: actions-on-packages/hello-world-go-action/.github/workflows/use_ts_action.yml@main
+  build: # make sure build/ci work properly
+    runs-on: macos-latest
+    steps:
+       - name: AOP Action rahulify
+         uses: rahulify/aop-action@1.0.2
+         with:
+              milliseconds : 1
+       - name: AOP Action
+         uses: aop-sanity-test/aop-action-repo-19@v1
+         with:
+              milliseconds : 1
